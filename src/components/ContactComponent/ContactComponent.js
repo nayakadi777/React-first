@@ -70,7 +70,7 @@ class Contact extends Component {
             errors.telnum ="Tel.Num should only be number";
         }
         if(this.state.touched.email  && Email.split('').filter( ele => ele === '@').length !==1){
-            errors.email ="Invalid email";
+            errors.email ="Invalid Email";
         }
         return errors;
     }
