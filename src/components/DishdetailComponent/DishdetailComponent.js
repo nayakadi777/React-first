@@ -58,7 +58,8 @@ import { Link } from 'react-router-dom';
             <div className="col-12 col-md-5 m-1">
               <h4>Comments</h4>
               <RenderComments comments ={props.comments} />
-              <CommentForm />
+              <CommentForm addComment={props.addComment}
+        dishId={props.dish.id}/>
             </div>
           </div>
         </div>
@@ -86,8 +87,10 @@ import { Link } from 'react-router-dom';
   }
 
     handleSubmit(values) {
+      this.toggleModal();
+      this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
       console.log('Current State is: ' + JSON.stringify(values));
-      alert('Current State is: ' + JSON.stringify(values));
+     // alert('Current State is: ' + JSON.stringify(values));
   }
   render(){
     return(
