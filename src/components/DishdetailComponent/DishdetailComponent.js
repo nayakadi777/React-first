@@ -79,7 +79,7 @@ import { baseUrl } from '../../Shared/baseUrl';
             <div className="col-12 col-md-5 m-1">
               <h4>Comments</h4>
               <RenderComments comments ={props.comments} />
-              <CommentForm addComment={props.addComment}
+              <CommentForm postComment={props.postComment}
         dishId={props.dish.id}/>
             </div>
           </div>
@@ -109,7 +109,7 @@ import { baseUrl } from '../../Shared/baseUrl';
 
     handleSubmit(values) {
       this.toggleModal();
-      this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
+      this.props.postComment(this.props.dishId, values.rating, values.name, values.comment);
       console.log('Current State is: ' + JSON.stringify(values));
      // alert('Current State is: ' + JSON.stringify(values));
   }
